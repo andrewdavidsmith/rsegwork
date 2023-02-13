@@ -288,8 +288,9 @@ output_boundaries(const vector<double> &tmp_read_bins,
     {
       static const size_t sz = tmp_boundary_scores.size();
 
-      if (std::abs(i - static_cast<long int>(change_points[j])) >
-          std::abs(i - static_cast<long int>(change_points[j + 1])))
+      const long int x1 = i - static_cast<long int>(change_points[j]);
+      const long int x2 = i - static_cast<long int>(change_points[j + 1]);
+      if (std::abs(x1) > std::abs(x2))
         ++j;
 
       const size_t trn = change_points[j];
