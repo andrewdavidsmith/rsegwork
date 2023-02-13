@@ -34,7 +34,7 @@ PROGS =  rseg rseg-diff deadzones
 INCLUDEDIRS = $(SMITHLAB_CPP) $(COMMON_LIB) $(SAMTOOL_LIB)
 INCLUDEARGS = $(addprefix -I,$(INCLUDEDIRS))
 
-LIBS = -lz -lm
+LIBS = -lz -lm -lgsl -lgslcblas -lhts
 
 CXX = g++
 CC = gcc
@@ -56,7 +56,7 @@ CXXFLAGS += -arch x86_64
 CCFLAGS += -arch x86_64 -std=gnu89
 ifeq "$(shell if [ `sysctl -n kern.osrelease | cut -d . -f 1` -ge 13 ];\
                   then echo 'true'; fi)" "true"
-CXXFLAGS += -stdlib=libstdc++
+CXXFLAGS += -std=c++11
 endif
 endif
 
