@@ -23,7 +23,7 @@
 #include "smithlab_utils.hpp"
 
 extern "C" {
-#include "gsl_sf_gamma.h"
+#include <gsl_sf_gamma.h>
 }
 
 #include <cmath>

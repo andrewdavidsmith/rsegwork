@@ -26,7 +26,7 @@ endif
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
-INCLUDEDIRS = $(SMITHLAB_CPP)  ../gsl
+INCLUDEDIRS = $(SMITHLAB_CPP)
 INCLUDEARGS = $(addprefix -I,$(INCLUDEDIRS))
 
 CXX = g++
@@ -52,6 +52,6 @@ all: $(OBJECTS)
 %.o: %.cpp %.hpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $< $(INCLUDEARGS)
 
-clean: 
+clean:
 	@-rm -f *.o *~
 .PHONY: clean
