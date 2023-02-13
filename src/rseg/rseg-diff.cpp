@@ -98,7 +98,8 @@ output_boundaries(const vector<double> &tmp_read_bins,
     {
       static const size_t sz = tmp_classes.size();
 
-      if (abs(i - transitions[j]) > abs(i - transitions[j + 1]))
+      if (std::abs(i - transitions[j]) >
+          std::abs(i - transitions[j + 1]))
         ++j;
       const size_t trn = transitions[j];
       if (trn == 0 || trn == sz)
@@ -287,7 +288,8 @@ output_boundaries(const vector<double> &tmp_read_bins,
     {
       static const size_t sz = tmp_boundary_scores.size();
 
-      if (abs(i - change_points[j]) > abs(i - change_points[j + 1]))
+      if (std::abs(i - change_points[j]) >
+          std::abs(i - change_points[j + 1]))
         ++j;
 
       const size_t trn = change_points[j];
